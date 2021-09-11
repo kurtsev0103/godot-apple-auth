@@ -246,6 +246,29 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F93QJDSLD3;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/godot",
+					"$(SRCROOT)/godot/main",
+					"$(SRCROOT)/godot/core",
+					"$(SRCROOT)/godot/core/os",
+					"$(SRCROOT)/godot/servers",
+					"$(SRCROOT)/godot/platform",
+					"$(SRCROOT)/godot/platform/iphone",
+					"$(SRCROOT)/godot/modules",
+					"$(SRCROOT)/godot/scene",
+					"$(SRCROOT)/godot/drivers",
+					"$(SRCROOT)/godot/trirdparty",
+				);
+				OTHER_CFLAGS = (
+					"-fcxx-modules",
+					"-fmodules",
+					"-g",
+					"-DPTRCALL_ENABLED",
+					"-DDEBUG_ENABLED",
+					"-DDEBUG_MEMORY_ALLOC",
+					"-DDISABLE_FORCED_INLINE",
+					"-DTYPED_METHOD_BIND",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -258,6 +281,23 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F93QJDSLD3;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/godot",
+					"$(SRCROOT)/godot/main",
+					"$(SRCROOT)/godot/core",
+					"$(SRCROOT)/godot/core/os",
+					"$(SRCROOT)/godot/servers",
+					"$(SRCROOT)/godot/platform",
+					"$(SRCROOT)/godot/platform/iphone",
+					"$(SRCROOT)/godot/modules",
+					"$(SRCROOT)/godot/scene",
+					"$(SRCROOT)/godot/drivers",
+					"$(SRCROOT)/godot/trirdparty",
+				);
+				OTHER_CFLAGS = (
+					"-fcxx-modules",
+					"-fmodules",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
