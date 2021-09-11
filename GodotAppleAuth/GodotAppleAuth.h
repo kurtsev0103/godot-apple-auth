@@ -5,8 +5,24 @@
 //  Created by Oleksandr Kurtsev on 11/09/2021.
 //
 
-#import <Foundation/Foundation.h>
+#import "core/engine.h"
 
-@interface GodotAppleAuth : NSObject
+#define PLUGIN_NAME "GodotAppleAuth"
+#define SIGNAL_CREDENTIAL "credential"
+#define SIGNAL_AUTHORIZATION "authorization"
 
-@end
+void init_godot_apple_auth();
+void deinit_godot_apple_auth();
+
+class GodotAppleAuth : public Object {
+    
+    GDCLASS(GodotAppleAuth, Object);
+    static void _bind_methods();
+    
+public:
+        
+    void signIn();
+    void signOut();
+    void credential();
+    
+};

@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D554997826ED42380004F978 /* GodotAppleAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = D554997726ED42380004F978 /* GodotAppleAuth.m */; };
+		D554997826ED42380004F978 /* GodotAppleAuth.mm in Sources */ = {isa = PBXBuildFile; fileRef = D554997726ED42380004F978 /* GodotAppleAuth.mm */; };
 		D554997926ED42380004F978 /* GodotAppleAuth.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = D554997626ED42380004F978 /* GodotAppleAuth.h */; };
+		D554998126ED55560004F978 /* AppleProvider.mm in Sources */ = {isa = PBXBuildFile; fileRef = D554998026ED55560004F978 /* AppleProvider.mm */; };
+		D554998426ED59110004F978 /* AuthResult.mm in Sources */ = {isa = PBXBuildFile; fileRef = D554998326ED59110004F978 /* AuthResult.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,7 +29,11 @@
 /* Begin PBXFileReference section */
 		D554997326ED42380004F978 /* libGodotAppleAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGodotAppleAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D554997626ED42380004F978 /* GodotAppleAuth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GodotAppleAuth.h; sourceTree = "<group>"; };
-		D554997726ED42380004F978 /* GodotAppleAuth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GodotAppleAuth.m; sourceTree = "<group>"; };
+		D554997726ED42380004F978 /* GodotAppleAuth.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = GodotAppleAuth.mm; sourceTree = "<group>"; };
+		D554997F26ED55560004F978 /* AppleProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleProvider.h; sourceTree = "<group>"; };
+		D554998026ED55560004F978 /* AppleProvider.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppleProvider.mm; sourceTree = "<group>"; };
+		D554998226ED59110004F978 /* AuthResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthResult.h; sourceTree = "<group>"; };
+		D554998326ED59110004F978 /* AuthResult.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AuthResult.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +66,12 @@
 		D554997526ED42380004F978 /* GodotAppleAuth */ = {
 			isa = PBXGroup;
 			children = (
+				D554998226ED59110004F978 /* AuthResult.h */,
+				D554998326ED59110004F978 /* AuthResult.mm */,
+				D554997F26ED55560004F978 /* AppleProvider.h */,
+				D554998026ED55560004F978 /* AppleProvider.mm */,
 				D554997626ED42380004F978 /* GodotAppleAuth.h */,
-				D554997726ED42380004F978 /* GodotAppleAuth.m */,
+				D554997726ED42380004F978 /* GodotAppleAuth.mm */,
 			);
 			path = GodotAppleAuth;
 			sourceTree = "<group>";
@@ -122,7 +132,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D554997826ED42380004F978 /* GodotAppleAuth.m in Sources */,
+				D554997826ED42380004F978 /* GodotAppleAuth.mm in Sources */,
+				D554998126ED55560004F978 /* AppleProvider.mm in Sources */,
+				D554998426ED59110004F978 /* AuthResult.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
