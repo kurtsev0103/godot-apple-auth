@@ -4,8 +4,10 @@ Plugin for authorization with Apple for Godot Game Engine
 ## Installation
 
 1. [Download Plugin](https://github.com/kurtsev0103/godot-apple-auth/releases/download/1.0.0/GodotAppleAuth_plugin.zip), unzip and copy files to your Godot project's ```res://ios/plugins``` directory. You can also group files in a sub-directory, like ```res://ios/plugins/godot_apple_auth```
-2. You can find and activate plugin by going to Project -> Export... -> iOS and in the Options tab, scrolling to the Plugins section. 
-<img width="430" alt="img" src="https://user-images.githubusercontent.com/27446881/132978224-f9024d35-fb54-46d6-85db-3a6e8fae036b.png">
+2. You can find and activate plugin by going to Project -> Export... -> iOS and in the Options tab, scrolling to the Plugins section.
+	<img width="430" alt="img" src="https://user-images.githubusercontent.com/27446881/132978224-f9024d35-fb54-46d6-85db-3a6e8fae036b.png">
+3. After exporting, you must add the capability to sign in with Apple in the xCode project.
+	<img width="720" alt="img" src="https://user-images.githubusercontent.com/27446881/132984240-309b2f13-06f7-44fa-b568-19024c2960d6.png">
 
 ## Samples and Example Usage
 
