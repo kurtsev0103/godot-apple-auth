@@ -21,8 +21,10 @@ class GodotAppleAuth : public Object {
     
 public:
         
+    void credential();
+    bool isAvailable();
+    
     void signIn();
     void signOut();
-    void credential();
     
 };

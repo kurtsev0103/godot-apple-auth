@@ -27,6 +27,7 @@ void GodotAppleAuth::_bind_methods() {
     ClassDB::bind_method(D_METHOD("sign_in"), &GodotAppleAuth::signIn);
     ClassDB::bind_method(D_METHOD("sign_out"), &GodotAppleAuth::signOut);
     ClassDB::bind_method(D_METHOD("credential"), &GodotAppleAuth::credential);
+    ClassDB::bind_method(D_METHOD("is_available"), &GodotAppleAuth::isAvailable);
     
     ADD_SIGNAL(MethodInfo(String(SIGNAL_CREDENTIAL), PropertyInfo(Variant::DICTIONARY, "result")));
     ADD_SIGNAL(MethodInfo(String(SIGNAL_AUTHORIZATION), PropertyInfo(Variant::DICTIONARY, "result")));
@@ -44,4 +45,8 @@ void GodotAppleAuth::signOut() {
 
 void GodotAppleAuth::credential() {
     [AppleProvider.shared credential];
+}
+
+bool GodotAppleAuth::isAvailable() {
+    if (@available(iOS 13.0, *)) { return true; } else { return false; }
 }
