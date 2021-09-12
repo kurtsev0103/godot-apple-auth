@@ -8,6 +8,8 @@
 #import "core/engine.h"
 
 #define PLUGIN_NAME "GodotAppleAuth"
+#define PLUGIN_VERSION "1.0.0"
+
 #define SIGNAL_CREDENTIAL "credential"
 #define SIGNAL_AUTHORIZATION "authorization"
 
