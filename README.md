@@ -71,7 +71,7 @@ Sign In
 # 1. Call the method anywhere in the code
 godot_apple_auth.sign_in()
 # 2. Wait for the answer in the method below
-func _on_credential(result: Dictionary):
+func _on_authorization(result: Dictionary):
 	if result.has("error"):
 		print(result.error)
 	else:
