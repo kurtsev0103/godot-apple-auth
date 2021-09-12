@@ -14,6 +14,7 @@ void AuthResult::authorization(ASAuthorizationAppleIDCredential* credential, NSS
     result["token"] = String(token.UTF8String);
     result["email"] = String(credential.email.UTF8String);
     result["user_id"] = String(credential.user.UTF8String);
+    result["name"] = "";
     
     NSString *firstName = credential.fullName.givenName;
     NSString *lastName = credential.fullName.familyName;
