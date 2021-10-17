@@ -33,6 +33,10 @@ void GodotAppleAuth::_bind_methods() {
     ADD_SIGNAL(MethodInfo(String(SIGNAL_AUTHORIZATION), PropertyInfo(Variant::DICTIONARY, "result")));
 }
 
+GodotAppleAuth::GodotAppleAuth() {}
+
+GodotAppleAuth::~GodotAppleAuth() {}
+
 #pragma mark - Implementation -
 
 void GodotAppleAuth::signIn() {

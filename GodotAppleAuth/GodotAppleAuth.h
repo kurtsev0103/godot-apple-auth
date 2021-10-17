@@ -29,4 +29,7 @@ public:
     void signIn();
     void signOut();
     
+    GodotAppleAuth();
+    ~GodotAppleAuth();
+    
 };
