@@ -26,6 +26,8 @@ do
   esac
 done
 
+echo "$(tput setaf 2)=== Selected Godot version $(tput setaf 1)$godot_version"-stable" $(tput setaf 2)===$(tput sgr 0)"
+
 # Checking for scons version
 if [ ${godot_version:0:1} = 4 ]; then
   scons_version=4.0
@@ -50,14 +52,15 @@ do
     output=debug
   fi
 
-  lipo -create bin/lib$plugin_name.arm64-iphone.$target.a bin/lib$plugin_name.x86_64-simulator.$target.a -output bin/$plugin_name.$output.a
-  rm bin/lib$plugin_name.arm64-iphone.$target.a
-  rm bin/lib$plugin_name.x86_64-simulator.$target.a
+  lipo -create ./bin/lib$plugin_name.arm64-iphone.$target.a ./bin/lib$plugin_name.x86_64-simulator.$target.a -output ./bin/$plugin_name.$output.a
+  rm ./bin/lib$plugin_name.arm64-iphone.$target.a
+  rm ./bin/lib$plugin_name.x86_64-simulator.$target.a
 done
 
-Archiving plugin
-zip bin/"$plugin_name"_for_Godot_$godot_version.zip bin/$plugin_name.release.a bin/$plugin_name.debug.a ./$plugin_name.gdip
-rm bin/$plugin_name.release.a
-rm bin/$plugin_name.debug.a
+# Archiving plugin
+zip ./bin/"$plugin_name"_for_Godot_$godot_version.zip ./bin/$plugin_name.release.a ./bin/$plugin_name.debug.a ./$plugin_name.gdip
 
-echo "=== The plugin has been created in 'bin' folder ==="
+rm ./bin/$plugin_name.release.a
+rm ./bin/$plugin_name.debug.a
+
+echo "$(tput setaf 2)=== The plugin has been created in $(tput setaf 6)'bin' $(tput setaf 2)folder ===$(tput sgr 0)"
