@@ -7,6 +7,7 @@
 
 #import "GodotAppleAuth.h"
 #import "AppleProvider.h"
+#import "AuthResult.h"
 
 #pragma mark - Initialization -
 
@@ -40,15 +41,27 @@ GodotAppleAuth::~GodotAppleAuth() {}
 #pragma mark - Implementation -
 
 void GodotAppleAuth::signIn() {
-    [AppleProvider.shared signIn];
+    if (@available(iOS 13.0, *)) {
+        [AppleProvider.shared signIn];
+    } else {
+        AuthResult::auth_error(@"Apple authentication is not supported.");
+    }
 }
 
 void GodotAppleAuth::signOut() {
-    [AppleProvider.shared signOut];
+    if (@available(iOS 13.0, *)) {
+        [AppleProvider.shared signOut];
+    } else {
+        AuthResult::auth_error(@"Apple authentication is not supported.");
+    }
 }
 
 void GodotAppleAuth::credential() {
-    [AppleProvider.shared credential];
+    if (@available(iOS 13.0, *)) {
+        [AppleProvider.shared credential];
+    } else {
+        AuthResult::credential_error(@"Apple authentication is not supported.");
+    }
 }
 
 bool GodotAppleAuth::isAvailable() {

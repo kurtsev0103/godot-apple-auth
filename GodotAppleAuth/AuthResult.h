@@ -16,7 +16,7 @@ public:
     static void auth_error(NSString* error);
     static void credential_error(NSString* error);
     
-    static void authorization(ASAuthorizationAppleIDCredential* credential, NSString* token);
-    static void credential(ASAuthorizationAppleIDProviderCredentialState state);
+    static void authorization(ASAuthorizationAppleIDCredential* credential, NSString* token) API_AVAILABLE(ios(13.0));
+    static void credential(ASAuthorizationAppleIDProviderCredentialState state) API_AVAILABLE(ios(13.0));
     
 };

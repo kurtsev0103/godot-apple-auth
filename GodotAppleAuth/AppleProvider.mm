@@ -66,14 +66,14 @@
 
 #pragma mark - ASAuthorizationControllerPresentationContextProviding -
 
-- (nonnull ASPresentationAnchor)presentationAnchorForAuthorizationController:(nonnull ASAuthorizationController *)controller {
+- (nonnull ASPresentationAnchor)presentationAnchorForAuthorizationController:(nonnull ASAuthorizationController *)controller  API_AVAILABLE(ios(13.0)) {
     NSPredicate *isKeyWindow = [NSPredicate predicateWithFormat:@"isKeyWindow == YES"];
     return [[[UIApplication sharedApplication] windows] filteredArrayUsingPredicate:isKeyWindow].firstObject;
 }
 
 #pragma mark - ASAuthorizationControllerDelegate -
 
-- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization {
+- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization API_AVAILABLE(ios(13.0)) {
     if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) {
         ASAuthorizationAppleIDCredential *appleIDCredential = authorization.credential;
         
@@ -99,7 +99,7 @@
     }
 }
 
-- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error {
+- (void)authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error API_AVAILABLE(ios(13.0)) {
     AuthResult::auth_error(error.localizedDescription);
 }
 

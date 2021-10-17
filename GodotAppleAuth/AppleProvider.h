@@ -12,8 +12,8 @@
 
 + (instancetype)shared;
 
-- (void)signIn;
-- (void)signOut;
-- (void)credential;
+- (void)signIn API_AVAILABLE(ios(13.0));
+- (void)signOut API_AVAILABLE(ios(13.0));
+- (void)credential API_AVAILABLE(ios(13.0));
 
 @end
