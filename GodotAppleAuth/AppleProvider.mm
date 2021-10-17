@@ -77,9 +77,6 @@
     if ([authorization.credential isKindOfClass:[ASAuthorizationAppleIDCredential class]]) {
         ASAuthorizationAppleIDCredential *appleIDCredential = authorization.credential;
         
-        NSString *rawNonce = self.currentNonce;
-        NSAssert(rawNonce != nil, @"Invalid state: A login callback was received, but no login request was sent.");
-        
         if (appleIDCredential.identityToken == nil) {
             AuthResult::auth_error(@"Unable to fetch identity token.");
             return;
@@ -115,9 +112,6 @@
         NSMutableArray *randoms = [NSMutableArray arrayWithCapacity:16];
         for (NSInteger i = 0; i < 16; i++) {
             uint8_t random = 0;
-            
-            int errorCode = SecRandomCopyBytes(kSecRandomDefault, 1, &random);
-            NSAssert(errorCode == errSecSuccess, @"Unable to generate nonce: OSStatus %i", errorCode);
             
             [randoms addObject:@(random)];
         }
