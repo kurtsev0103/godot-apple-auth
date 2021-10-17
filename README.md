@@ -1,23 +1,23 @@
 # GodotAppleAuth
 Plugin for authorization with Apple for Godot Game Engine
+- Supports iOS deployment target ```>= 10.0```
+- Supports Godot version ```>= 3.3```
+- Supports simulator
 
 ## Installation
 
-1. [Download Plugin](https://github.com/kurtsev0103/godot-apple-auth/releases/download/1.0.1/GodotAppleAuth_plugin.zip), unzip and copy files to your Godot project's ```res://ios/plugins``` directory. You can also group files in a sub-directory, like ```res://ios/plugins/godot_apple_auth```
-	> The latest version of this plugin requires ```Godot 3.3.4```. If you have a lower version of Godot, see the [Releases](https://github.com/kurtsev0103/godot-apple-auth/releases) tab.
+1. [Download Plugin](https://github.com/kurtsev0103/godot-apple-auth/releases/tag/1.1.0) for your version of Godot, unzip and copy files to your Godot project's ```res://ios/plugins/godot_apple_auth``` directory.
 
 2. You can find and activate plugin by going to Project -> Export... -> iOS and in the Options tab, scrolling to the Plugins section.
 
 	<img width="430" alt="img" src="https://user-images.githubusercontent.com/27446881/132978224-f9024d35-fb54-46d6-85db-3a6e8fae036b.png">
 3. After exporting, you must add the capability to sign in with Apple in the xCode project.
 
-	<img width="720" alt="img" src="https://user-images.githubusercontent.com/27446881/132984240-309b2f13-06f7-44fa-b568-19024c2960d6.png">
+	<img width="720" alt="img" src="https://user-images.githubusercontent.com/27446881/137631413-7be90e89-537c-4a4f-9eda-599030a12dc7.png">
 
-## Samples and Example Usage
-
-Description
-
-> Methods
+## Description
+- Methods
+	
 ```gdscript
 # Checking for support of the current Apple Sign-in platform 
 is_available() -> bool
@@ -29,13 +29,14 @@ sign_in() -> void
 sign_out() -> void
 ```
 
-> Signals
+- Signals
 ```gdscript
 credential(result: Dictionary)
 authorization(result: Dictionary)
 ```
 
-Initialization
+## Samples and Example Usage
+- Initialization
 ```gdscript
 var godot_apple_auth: Object
 
@@ -46,17 +47,18 @@ func _ready():
 		godot_apple_auth.connect("authorization", self, "_on_authorization")
 ```
 
-Checking for support Apple Sign-in
+- Checking for support Apple Sign-in
 ```gdscript
 # Call the method anywhere in the code
 if godot_apple_auth.is_available():
 	print("available")
 ```
 
-Checking credential status
+- Checking credential status
 ```gdscript
 # 1. Call the method anywhere in the code
 godot_apple_auth.credential()
+
 # 2. Wait for the answer in the method below
 func _on_credential(result: Dictionary):
 	if result.has("error"):
@@ -68,10 +70,11 @@ func _on_credential(result: Dictionary):
 		# "revoked" <- user ID was revoked by the user
 ```
 
-Sign In
+- Sign In
 ```gdscript
 # 1. Call the method anywhere in the code
 godot_apple_auth.sign_in()
+
 # 2. Wait for the answer in the method below
 func _on_authorization(result: Dictionary):
 	if result.has("error"):
@@ -85,10 +88,16 @@ func _on_authorization(result: Dictionary):
 		print(result.name)
 ```
 
-Sign Out
+- Sign Out
 ```gdscript
 # Call the method anywhere in the code
 godot_apple_auth.sign_out()
 ```
+
+## Build from Source
+
+- Just run ```scripts/build.sh -v 3.3.4``` where -v is desired Godot version
+	
+	> You will find the ready-to-use archive with the plugin in the ```bin``` directory.
 
 ## Created by Oleksandr Kurtsev (Copyright © 2021) [LICENSE](https://github.com/kurtsev0103/godot-apple-auth/blob/main/LICENSE)
