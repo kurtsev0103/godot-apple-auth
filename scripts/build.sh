@@ -3,7 +3,7 @@
 plugin_name=GodotAppleAuth
 
 scons_version=3.x
-godot_version=3.3.4
+godot_version=3.4
 
 declare -a targets=(release release_debug)
 
