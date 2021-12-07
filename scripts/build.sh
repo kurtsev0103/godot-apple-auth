@@ -12,6 +12,7 @@ function validating_version() {
   local version=${1}"-stable"
 
   cd ./godot || exit
+  git pull
   if [ $(git tag -l $version) ]; then
     godot_version=${1}
   fi
